@@ -32,7 +32,7 @@ class App extends Component {
           href="https://www.ee.ryerson.ca/capstone/topics/2020/MJ06.html" 
           target="_blank" 
           rel="noopener noreferrer">
-            Project Descrtiption
+            Project Description Page
         </a>
       </div>
       
