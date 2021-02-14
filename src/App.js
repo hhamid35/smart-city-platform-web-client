@@ -14,7 +14,8 @@ class App extends Component {
   render() {
     const position = [this.state.lat, this.state.lng];
     return (
-      <MapContainer  className="map" center={position} zoom={this.state.zoom}>
+      <div className="map">
+        <MapContainer  className="map" center={position} zoom={this.state.zoom}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -24,7 +25,17 @@ class App extends Component {
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
         </Marker>
-      </MapContainer>
+        </MapContainer>
+        <p>Smart City Platform Capstone Project</p>
+        <a 
+          class="App-link" 
+          href="https://www.ee.ryerson.ca/capstone/topics/2020/MJ06.html" 
+          target="_blank" 
+          rel="noopener noreferrer">
+            Project Descrtiption
+        </a>
+      </div>
+      
     );
   }
 }
