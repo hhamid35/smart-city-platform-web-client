@@ -36,11 +36,11 @@ const customMarker = new L.Icon({
 class App extends Component {
   state = {
     location : {
-      lat: 23.5907392,
-      lng: -23.6344201,
+      lat: 43.693,
+      lng: -79.8365,
     },
     haveUserLocation: false,
-    zoom: 2
+    zoom: 13
   }
 
   async componentDidMount() {
