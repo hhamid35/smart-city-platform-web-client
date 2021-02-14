@@ -7,15 +7,15 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Smart City Platform Capstone Project
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://www.ee.ryerson.ca/capstone/topics/2020/MJ06.html"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Project Descrtiption
         </a>
       </header>
     </div>
