@@ -4,9 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
+      <p>
           Smart City Platform Capstone Project
         </p>
         <a
@@ -17,7 +15,6 @@ function App() {
         >
           Project Descrtiption
         </a>
-      </header>
     </div>
   );
 }
