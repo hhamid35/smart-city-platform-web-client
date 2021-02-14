@@ -20,11 +20,7 @@ class App extends Component {
       lng: -23.6344201,
     },
     haveUserLocation: false,
-    zoom: 2,
-    userMessage: {
-      name: '',
-      message: ''
-    }
+    zoom: 2
   }
 
   componentDidMount() {
@@ -42,6 +38,7 @@ class App extends Component {
       fetch('https://ipapi.co/json')
         .then(res => res.json())
         .then(location => {
+          console.log(location);
           this.setState({
             location: {
               lat: location.latitude,
@@ -58,29 +55,42 @@ class App extends Component {
     const position = [this.state.location.lat, this.state.location.lng];
     return (
       <div className="map">
-        <MapContainer  className="map" center={position} zoom={this.state.zoom}>
+        <MapContainer  
+          className="map"
+          center={position} 
+          zoom={this.state.zoom}>
           <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          { this.state.haveUserLocation ?
+          { 
+            this.state.haveUserLocation ?
             <Marker 
               position={position}
               icon={myIcon}>
               <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
+                <p>Smart City Platform Capstone Project</p>
+                <a 
+                  className="App-link" 
+                  href="https://www.ee.ryerson.ca/capstone/topics/2020/MJ06.html" 
+                  target="_blank" 
+                  rel="noopener noreferrer">
+                    Project Description Page
+                </a>
               </Popup>
             </Marker> : ''
           }
         </MapContainer>
-        <p>Smart City Platform Capstone Project</p>
-        <a 
-          class="App-link" 
-          href="https://www.ee.ryerson.ca/capstone/topics/2020/MJ06.html" 
-          target="_blank" 
-          rel="noopener noreferrer">
-            Project Description Page
-        </a>
+        <div className="footer">
+          <p>Smart City Platform Capstone Project</p>
+          <a 
+            className="App-link" 
+            href="https://www.ee.ryerson.ca/capstone/topics/2020/MJ06.html" 
+            target="_blank" 
+            rel="noopener noreferrer">
+              Project Description Page
+          </a>
+        </div>
       </div>
       
     );

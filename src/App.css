@@ -11,3 +11,15 @@ body {
 .map {
   height: 100%;
 }
+
+.map .leaflet-container {
+  height: 100%;
+}
+
+.footer {
+  z-index: 999;
+  position: absolute;
+  bottom: 35px;
+  left: 5px;
+  padding: 5px;
+}
