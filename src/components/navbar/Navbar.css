@@ -1,0 +1,42 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.NavbarItems {
+    background: rgb(82, 64, 241);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.navbar-logo{
+    color: #fff;
+    justify-self: start;
+    margin-left: 40px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.nav-menu{
+    display:grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    width: 70vw;
+    justify-content: end;
+    margin-right: 2rem;
+}
+
+.nav-links{
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 0.5rem;
+    font-size: 18px;
+}
+
+.nav-links:hover{
+    background-color: #6d76f7;
+    transition: all 0.2s ease-out;
+}

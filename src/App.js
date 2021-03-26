@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import L from 'leaflet';
 import { MapContainer , TileLayer, Marker, Popup, Pop } from 'react-leaflet';
 import { Card, CardTitle, CardText, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import Navbar from './components/navbar/Navbar'
 
 import {
   ComposedChart,
@@ -27,7 +28,7 @@ var myIcon = L.icon({
 
 const customMarker = new L.Icon({
   iconUrl: garbageBinMarker,
-  iconSize: [30, 41],
+  iconSize: [25, 35],
   iconAnchor: [10, 41],
   popupAnchor: [2, -40]
 });
@@ -72,10 +73,14 @@ class App extends Component {
   }
 
   render() {
+
     const position = [this.state.location.lat, this.state.location.lng];
     const data = [10,0,-2.5,540];
     return (
       <div className="map">
+        <div className = "nav">
+          <Navbar />
+        </div>
         <MapContainer  
           className="map"
           center={position} 
