@@ -3,6 +3,7 @@ import L from 'leaflet';
 import { MapContainer , TileLayer, Marker, Popup, Pop } from 'react-leaflet';
 import { Card, CardTitle, CardText, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import Navbar from './components/navbar/Navbar'
+import Readings from './components/Readings'
 
 import {
   ComposedChart,
@@ -28,8 +29,8 @@ var myIcon = L.icon({
 
 const customMarker = new L.Icon({
   iconUrl: garbageBinMarker,
-  iconSize: [25, 35],
-  iconAnchor: [10, 41],
+  iconSize: [30, 41],
+  iconAnchor: [25, 35],
   popupAnchor: [2, -40]
 });
 
@@ -95,16 +96,7 @@ class App extends Component {
               position={position}
               icon={customMarker}>
               <Popup maxWidth="auto" maxHeight="auto">
-                <ComposedChart width={500} height={200} data={data} margin={{
-                  top: 20, right: 0, left: 0, bottom: 20,
-                }}>
-                  <CartesianGrid stroke='#f5f5f5' />
-                  <XAxis dataKey="Capacity" />
-                  <YAxis />
-                  <Tooltip />
-                  <Legend />
-                  <Line type="monotone" dataKey="Capacity" stackId="a" stroke="#8884d8" />
-                </ComposedChart>
+                <Readings />
               </Popup>
             </Marker> : ''
           }
