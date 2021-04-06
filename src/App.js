@@ -77,16 +77,16 @@ class App extends Component {
 
     const position = [this.state.location.lat, this.state.location.lng];
     return (
-        <div className="map">
-          <Navbar />
-          <MapContainer  
-            className="map"
-            center={position} 
-            zoom={this.state.zoom}>
-            <TileLayer
-              attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
+      <div className="map">
+        <Navbar />
+        <MapContainer  
+          className="map"
+          center={position} 
+          zoom={this.state.zoom}>
+          <TileLayer
+            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
             { 
               this.state.haveUserLocation ?
               <Marker 
@@ -97,18 +97,18 @@ class App extends Component {
                 </Popup>
               </Marker> : ''
             }
-          </MapContainer>
-          <div className="footer">
-            <p>Smart City Platform Capstone Project</p>
-            <a 
-              className="App-link" 
-              href="https://www.ee.ryerson.ca/capstone/topics/2020/MJ06.html" 
-              target="_blank" 
-              rel="noopener noreferrer">
-                Project Description Page
-            </a>
-          </div>
+        </MapContainer>
+        <div className="footer">
+          <p>Smart City Platform Capstone Project</p>
+          <a 
+            className="App-link" 
+            href="https://www.ee.ryerson.ca/capstone/topics/2020/MJ06.html" 
+            target="_blank" 
+            rel="noopener noreferrer">
+              Project Description Page
+          </a>
         </div>
+      </div>
       
     );
   }
