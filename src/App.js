@@ -76,42 +76,39 @@ class App extends Component {
   render() {
 
     const position = [this.state.location.lat, this.state.location.lng];
-    const data = [10,0,-2.5,540];
     return (
-      <div className="map">
-        <div className = "nav">
+        <div className="map">
+          <MapContainer  
+            className="map"
+            center={position} 
+            zoom={this.state.zoom}>
+            <TileLayer
+              attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            { 
+              this.state.haveUserLocation ?
+              <Marker 
+                position={position}
+                icon={customMarker}>
+                <Popup maxWidth="auto" maxHeight="auto">
+                  <Readings />
+                </Popup>
+              </Marker> : ''
+            }
+          </MapContainer>
           <Navbar />
+          <div className="footer">
+            <p>Smart City Platform Capstone Project</p>
+            <a 
+              className="App-link" 
+              href="https://www.ee.ryerson.ca/capstone/topics/2020/MJ06.html" 
+              target="_blank" 
+              rel="noopener noreferrer">
+                Project Description Page
+            </a>
+          </div>
         </div>
-        <MapContainer  
-          className="map"
-          center={position} 
-          zoom={this.state.zoom}>
-          <TileLayer
-            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          { 
-            this.state.haveUserLocation ?
-            <Marker 
-              position={position}
-              icon={customMarker}>
-              <Popup maxWidth="auto" maxHeight="auto">
-                <Readings />
-              </Popup>
-            </Marker> : ''
-          }
-        </MapContainer>
-        <div className="footer">
-          <p>Smart City Platform Capstone Project</p>
-          <a 
-            className="App-link" 
-            href="https://www.ee.ryerson.ca/capstone/topics/2020/MJ06.html" 
-            target="_blank" 
-            rel="noopener noreferrer">
-              Project Description Page
-          </a>
-        </div>
-      </div>
       
     );
   }
