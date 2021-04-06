@@ -78,6 +78,7 @@ class App extends Component {
     const position = [this.state.location.lat, this.state.location.lng];
     return (
         <div className="map">
+          <Navbar />
           <MapContainer  
             className="map"
             center={position} 
@@ -97,7 +98,6 @@ class App extends Component {
               </Marker> : ''
             }
           </MapContainer>
-          <Navbar />
           <div className="footer">
             <p>Smart City Platform Capstone Project</p>
             <a 
