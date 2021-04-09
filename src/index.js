@@ -7,6 +7,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render( React.createElement(App, null), document.getElementById('root'));
 
 reportWebVitals();

@@ -29,3 +29,56 @@ body {
   left: 5px;
   padding: 5px;
 }
+
+.control-card {
+  z-index: 999;
+  position: absolute;
+  top: 5vw;
+  right: 7vh;
+}
+
+.card-container {
+  display: inline-block;
+  position: absolute;
+  top: 5vw;
+  right: -5vh;
+  width: 25vw;
+  height: 20vh;
+  background: #6d76f7;
+  padding: 2px 16px;
+}
+
+.card-title {
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+}
+
+.card-content {
+  display: flex;
+  padding: 10px;
+}
+
+.popover {
+  z-index: 1000;
+}
+
+.popover-content {
+  display: inline-block;
+  position: absolute;
+  background: #b7bbe9;
+  padding: 2px 30px;
+}
+
+.popover-title {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 15px;
+}
+
+.popover-body {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 15px;
+  padding: 2px;
+}
