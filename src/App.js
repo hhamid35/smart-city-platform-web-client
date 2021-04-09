@@ -48,7 +48,6 @@ class App extends Component {
       generateRoutePopoverOpen: false,
       generateRoutePopoverContent: 'Please wait...',
       deviceList: [],
-      haveDevices: false
     }
 
     this.toggleTrainModelPopover = this.toggleTrainModelPopover.bind(this);
@@ -186,19 +185,11 @@ class App extends Component {
     //     devices.splice(index, 1);
     //   }
     // });
-
-    this.setState(state => ({
-      haveDevices: state.deviceList.length == 0
-    }));
-
-    
-
   }
 
   async initiateModelTraining() {
     axios.get('http://ec2-50-19-241-198.compute-1.amazonaws.com:8080/modelTrainingTriggerHandler')
       .then(res => {
-        console.log(res);
         this.setState(state => ({
           trainModelPopoverContent: 'Successfully generated a new model. It is now being used to make Predictions.'
         }));
@@ -220,7 +211,6 @@ class App extends Component {
   async initiateRouteGeneration() {
     axios.post('http://ec2-50-19-241-198.compute-1.amazonaws.com:8080/generateRoutes')
       .then(res => {
-        console.log(res);
         this.setState(state => ({
           generateRoutePopoverContent: 'Successfully generated an optimized route.'
         }));
@@ -243,7 +233,6 @@ class App extends Component {
     if (!this.state.deviceList) {
       return ''
     }
-    console.log(this.state.deviceList);
     return (
       <div className="map">
         <Navbar />
@@ -256,7 +245,7 @@ class App extends Component {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
             {/* {console.log(this.state.deviceList.length)} */}
-            {this.state.haveDevices ? this.state.deviceList.map((device, index) => {
+            {this.state.deviceList > 0 ? this.state.deviceList.map((device, index) => {
               if ('lastReading' in device){
                 return <Marker position={[device.lastReading.latitude, device.lastReading.longitude]} icon={customMarker}>
                         <Popup maxWidth="auto" maxHeight="auto">
