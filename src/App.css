@@ -4,6 +4,7 @@
   padding: 0;
   font-family: 'Lato', sans-serif;
 }
+
 body {
   margin: 0px;
   width: 100vw;
@@ -81,4 +82,7 @@ body {
   text-align: center;
   font-size: 15px;
   padding: 2px;
+}
+.devices {
+  z-index: 1000;
 }

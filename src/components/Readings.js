@@ -3,15 +3,15 @@ import { Line } from "react-chartjs-2";
 import axios from "axios";
 import './Readings.css'
 
-const Readings = () => {
+const Readings = (newIp) => {
   const [chartData, setChartData] = useState({});
+  const [ip, setIp] = useState('');
 
   const chart = () => {
     let cap = []
     let time = []
     axios.get("http://ec2-50-19-241-198.compute-1.amazonaws.com:8080/readings")
       .then(res => {
-        console.log(res);
         for(const dataObj of res.data){
           cap.push(dataObj.capacity);
           time.push(dataObj.timestamp);
@@ -38,6 +38,11 @@ const Readings = () => {
   useEffect(() => {
     chart();
   }, []);
+
+  useEffect(() => {
+    setIp(ip);
+  }, [newIp]);
+
   return (
     <div className="App">
       <div>
@@ -45,7 +50,7 @@ const Readings = () => {
           data={chartData}
           options={{
             responsive: true,
-            title: { text: "Device Capacity", display: true },
+            title: { text: "Device Capacity - " + newIp, display: true },
             scales: {
               yAxes: [
                 {

@@ -1,4 +1,11 @@
-.App {
-    height: 400px;
-    width: 500px;
+.readings {
+    margin-left: auto;
+    margin-right: auto;
+    height: 40vh;
+    width: 60vh;
 }
+
+.readings-status {    
+    padding-left: 10%;
+}
+  
